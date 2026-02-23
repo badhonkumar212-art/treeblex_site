@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Treeblex</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            background: #f4f4f4;
+
+        }
+
+        .box {
+
+            background: white;
+
+            padding: 20px;
+
+            margin: 20px auto;
+
+            width: 80%;
+
+            border-radius: 10px;
+
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        }
+
+        input {
+
+            padding: 8px;
+
+            margin: 5px;
+
+        }
+
+        button {
+
+            padding: 8px 15px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+        }
+
+        .hidden {
+
+            display: none;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<h1>Treeblex</h1>
+
+<p>Learn Smart. Grow Smart.</p>
+
+
+
+<div class="box">
+
+    <h2>Basic Class</h2>
+
+    <a href="#">Basic Class Link</a>
+
+</div>
+
+
+
+<div class="box">
+
+    <h2>Premium Login</h2>
+
+    <input type="text" id="studentId" placeholder="Enter Student ID">
+
+    <button onclick="checkLogin()">Login</button>
+
+    <p id="message"></p>
+
+</div>
+
+
+
+<div class="box hidden" id="premiumContent">
+
+    <h2>Premium Class</h2>
+
+    <p>Welcome, Premium Student 🎉</p>
+
+    <a href="#">Premium Class Link</a>
+
+</div>
+
+
+
+<script>
+
+    // এখানে প্রিমিয়াম স্টুডেন্ট আইডি যোগ করবি
+
+    const premiumStudents = ["SK101", "SK102", "SK103"];
+
+
+
+    function checkLogin() {
+
+        const id = document.getElementById("studentId").value;
+
+        if (premiumStudents.includes(id)) {
+
+            document.getElementById("premiumContent").classList.remove("hidden");
+
+            document.getElementById("message").innerText = "Access Granted ✅";
+
+        } else {
+
+            document.getElementById("message").innerText = "Invalid ID ❌";
+
+        }
+
+    }
+
+</script>
+
+
+
+</body>
+
+</html>
